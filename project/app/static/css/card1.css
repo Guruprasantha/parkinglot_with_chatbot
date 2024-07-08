@@ -1,0 +1,275 @@
+.ag-format-container {
+  width: 1142px;
+  margin: 0 auto;
+}
+
+
+body {
+  background-color: #000;
+}
+.ag-courses_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  padding: 50px 0;
+}
+.ag-courses_item {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+
+  margin: 0 15px 30px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+}
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
+
+  overflow: hidden;
+
+  position: relative;
+}
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+  text-decoration: none;
+  color: #FFF;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.ag-courses-item_title {
+  min-height: 87px;
+  margin: 0 0 25px;
+
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 30px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f9b234;
+
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease
+}
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #f9b234;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+  background-color: #3ecd5e;
+}
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+  background-color: #e44002;
+}
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+  background-color: #952aff;
+}
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+  background-color: #cd3e94;
+}
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+  background-color: #4c49ea;
+}
+
+
+
+@media only screen and (max-width: 979px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
+  }
+  .ag-courses-item_title {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+
+}
+@media only screen and (max-width: 639px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .ag-courses-item_title {
+    min-height: 72px;
+    line-height: 1;
+
+    font-size: 24px;
+  }
+  .ag-courses-item_link {
+    padding: 22px 40px;
+  }
+  .ag-courses-item_date-box {
+    font-size: 16px;
+  }
+}
+
+/* logout button */
+
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: Raleway;
+  background-color: #ecf0f1; }
+
+.copyright {
+  position: absolute;
+  bottom: 0; }
+  .copyright a {
+    text-decoration: none;
+    color: #16a085; }
+    .copyright a:hover {
+      text-decoration: underline; }
+
+.button {
+  position: relative;
+  padding: 1em 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 10px;
+  margin: 1em 0.8em; }
+  .button.type1 {
+    color: #566473; }
+    .button.type1.type1::after, .button.type1.type1::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      border: 2px solid;
+      transition: all 0.6s ease;
+      border-radius: 2px; }
+    .button.type1.type1::after {
+      bottom: 0;
+      right: 0;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: #566473;
+      border-right-color: #566473; }
+    .button.type1.type1::before {
+      top: 0;
+      left: 0;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      border-top-color: #566473;
+      border-left-color: #566473; }
+    .button.type1.type1:hover:after, .button.type1.type1:hover:before {
+      width: 100%;
+      height: 100%; }
+  .button.type2 {
+    color: #16a085; }
+    .button.type2.type2:after, .button.type2.type2:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #16a085;
+      transition: all 0.3s ease;
+      transform: scale(0.85); }
+    .button.type2.type2:hover:before {
+      top: 0;
+      transform: scale(1); }
+    .button.type2.type2:hover:after {
+      transform: scale(1); }
+  .button.type3 {
+    color: #435a6b; }
+    .button.type3.type3::after, .button.type3.type3::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      border: 2px solid;
+      transition: all 0.6s ease;
+      border-radius: 2px; }
+    .button.type3.type3::after {
+      bottom: 0;
+      right: 0;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: #435a6b;
+      border-right-color: #435a6b; }
+    .button.type3.type3::before {
+      top: 0;
+      left: 0;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      border-top-color: #435a6b;
+      border-left-color: #435a6b; }
+    .button.type3.type3:hover:after, .button.type3.type3:hover:before {
+      border-bottom-color: #435a6b;
+      border-right-color: #435a6b;
+      border-top-color: #435a6b;
+      border-left-color: #435a6b;
+      width:100%;
+      height: 100%; }
+  .button.type4 {
+    color: red; }
+    .button.type4::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 0;
+      left: 0;
+      background-color: red;
+      transition: width 0.3s ease-in-out; }
+    .button.type4::after {
+      bottom: 0; }
+    .button.type4:hover::after {
+      width: 50px; }

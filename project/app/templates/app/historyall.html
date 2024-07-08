@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Parking Lot</title>
+</head>
+<div class="table-container mt-5 mb-5 w-75 mx-auto" >
+        <h5 class="text-center mb-3">List of Cars in Parking Lot</h5>
+        <table class="table table-striped shadow " id="parkingTable">
+                <thead class="text-white" id="tableHead">
+                  <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phonenumber</th>
+                    <th scope="col">Owner</th>
+                    <th scope="col">Car</th>
+                    <th scope="col">License Plate</th>
+                    <th scope="col">Entry time</th>
+                    <th scope="col">Exit time</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  
+                  {% for e in event %}
+                  {% for c in events %}
+                <tr>
+                    <td>{{ e.id}}</td>
+                    <td>{{ c.email}}</td>
+                    <td>{{ c.phonenumber}}</td>
+                    <td>{{ e.name}}</td>
+                    <td>{{ e.car}}</td>
+                    <td>{{ e.license }}</td>
+                    <td>{{ e.intime }}</td>
+                    <td>{{ e.outtime }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                  <td colspan="5" align="center">No Booking</td>
+                </tr>
+              {% endfor %}
+              {% endfor %}
+  
+              
+                </tbody>
+              </table>
+</div>
+<script src="/static/JS/bootstrap.min.js"></script>
+<script src="/static/JS/core.js"></script>
+</body>
+</html>

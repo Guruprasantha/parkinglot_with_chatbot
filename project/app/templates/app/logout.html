@@ -1,0 +1,45 @@
+{% extends 'app/homepage.html' %}
+
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+    <header class="header">
+        <img style="width: 5%; height: 25%; margin-left : -10%;" src="{% static 'images/icon3.png' %}">
+        <ul class="nav">
+            <li style="color: aliceblue;">WELCOME {{ session }}</li>
+            <!-- <li><a href="http://127.0.0.1:8000/">Logout</a></li> -->
+            <li><button class="button type3"><a href="http://127.0.0.1:8000/">LogOut</a></button></li>
+        </ul>
+      </header>
+</form>
+<section>
+  <div class="ag-format-container">
+    <div class="ag-courses_box">
+      <div class="ag-courses_item">
+        <a href="http://127.0.0.1:8000/booking/" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+  
+          <div class="ag-courses-item_title">
+           PARKING LOT BOOKING
+          </div>
+        </a>
+      </div>
+  
+      <div class="ag-courses_item">
+        <a href="http://127.0.0.1:8000/history/" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+  
+          <div class="ag-courses-item_title">
+            VIEW HISTORY
+          </div>
+        </a>
+      </div>
+  
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+      /* Container styling */
+      .container {
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          background-color: #f9f9f9;
+          border-radius: 8px;
+      }
+      
+      /* Register heading */
+      .register-heading {
+          text-align: center;
+          margin-bottom: 20px;
+          font-size: 24px;
+          color: #333;
+      }
+      
+      /* Form labels */
+      label {
+          display: block;
+          margin: 10px 0 5px;
+          font-size: 14px;
+          color: #555;
+      }
+      
+      /* Input fields */
+      .input-txt {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 14px;
+          box-sizing: border-box;
+      }
+      
+      /* Submit button */
+      button[type="submit"] {
+          width: 100%;
+          padding: 10px;
+          background-color: #4CAF50;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          color: white;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+      
+      /* Submit button hover effect */
+      button[type="submit"]:hover {
+          background-color: #45a049;
+      }
+      
+      /* Responsive design */
+      @media (max-width: 600px) {
+          .container {
+              padding: 10px;
+          }
+      
+          .register-heading {
+              font-size: 20px;
+          }
+      
+          .input-txt {
+              font-size: 12px;
+          }
+      
+          button[type="submit"] {
+              font-size: 14px;
+          }
+      }
+      
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot</title>
+</head>
+<body>
+    
+    
+  
+	<div class="container" data-position="1">
+
+	  
+
+        <div class="register">
+        
+          <h1 class="register-heading">Register </h1>
+            
+          <form id="form" action="" method="POST">
+            {% csrf_token %}
+            
+                <label for="name">NAME</label>
+                <input type="text" 
+                    name="name"  
+                    class="input-txt" data-pos="1" required/>
+                <label for="car">CAR</label>
+                <input type="text" 
+                    name="car"  
+                    minlength="5"
+                    class="input-txt" data-pos="2" required/>
+                <label for="license">LICENSE PLATE</label>
+                <input type="text" 
+                    name="license" 
+                    minlength="5"
+                    class="input-txt" data-pos="3" required/>
+                    <label for="indate">ENTRY DATE</label>
+                    <input type="date" 
+                        name="indate" 
+                        class="input-txt" data-pos="3" required/>
+                    <label for="intime">ENTRY TIME</label>
+                <input type="time" 
+                    name="intime" 
+                    minlength="5"
+                    class="input-txt" data-pos="3" required/>
+                <label for="outtime">EXIT TIME</label>
+                <input type="time" 
+                    name="outtime" 
+                    minlength="5"
+                    class="input-txt" data-pos="3" required/>
+                    
+                    <label for="outdate">EXIT DATE</label>
+                    <input type="date" 
+                        name="outdate" 
+                        class="input-txt" data-pos="3" required/>
+              <button type="submit"> SUBMIT </button>
+          </form>
+  
+        </div>
+  
+      </div>
+  
+  <script>
+    (function() {
+  jQuery(function() {
+    $('.input-txt').on('focus', function() {
+      var $container, $this, nPosition;
+      $container = $('.container');
+      $this = $(this);
+      nPosition = $this.data('pos');
+      return $container.attr('data-position', nPosition);
+    });
+    $('.input-txt').bind('invalid', function() {
+      return $('.container').addClass('error');
+    });
+    return $('.input-txt').bind('blur', function() {
+      return $('.container').removeClass('error');
+    });
+  });
+
+}).call(this);
+  </script>
+  
+</body>
+</html>
