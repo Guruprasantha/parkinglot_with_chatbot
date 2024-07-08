@@ -102,19 +102,23 @@ def bot(request):
     if request.method == 'POST':
         text=request.POST.get('text')
         result=sent_message(text)
-        return render(request, 'bot.html',{'result':result,'usertext':text})
+        return render(request, 'app/bot.html',{'result':result,'usertext':text})
     return render(request,'app/bot.html',{'result':None})
 
 
 def sent_message(txt):
         b=nltk.word_tokenize(txt)
         print(b)
-        genai.configure(api_key='AIzaSyDt1TMqr33BAknZCKEIIFxMzCRGkuLkEVc')
-        model = genai.GenerativeModel('gemini-pro')
-        response = model.generate_content(txt)
-        res = response.text
-        print(res)
-        return res
+        if (('park'in b) or('Park'in b) or ('parking'in b) or ('Parking'in b) or ('PARKING'in b) or ('PARK'in b) ):
+            genai.configure(api_key='AIzaSyDt1TMqr33BAknZCKEIIFxMzCRGkuLkEVc')
+            model = genai.GenerativeModel('gemini-pro')
+            response = model.generate_content(txt)
+            res = response.text
+            print(res)
+            return res
+        else:
+            res='please ask related to parking..'
+            return res
      
 
 

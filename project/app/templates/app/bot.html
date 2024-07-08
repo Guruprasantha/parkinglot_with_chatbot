@@ -20,7 +20,7 @@
     <div class="panel-header">
      
       <div class="header-icon">
-        <i class='fa fa-home'></i>
+        <a href="{% url 'homepage' %}"><i class='fa fa-home'></i></a>
       </div>
       </a>
       <div class="header-title"><span></span></div>
@@ -50,7 +50,7 @@
    <div class="input-group mb-3">
   <input type="text" class="form-control" placeholder="Search here..." name="text" aria-label="Enter text..." aria-describedby="basic-addon2">
   <div class="input-group-append">
-    <button class="btn btn-primary" type="button">submit</button>
+    <button class="btn btn-primary" type="submit">submit</button>
   </div>
 </div>
   </form>
