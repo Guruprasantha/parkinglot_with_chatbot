@@ -37,7 +37,7 @@ body{
   width:800px;
   height:80vh;
 /*   padding:10px; */
-  border:1px solid #v;
+  border:1px solid ;
   border-radius:2px;
   box-shadow: 10px 10px 5px gray;
   background:rgba(229, 229, 232,0.6);
@@ -65,7 +65,7 @@ body{
   margin:0 10px;
   border:1px solid #20BF55;
   border-radius:100%;
-  background:#20BF55;
+  background:#347be7;
 }
 
 .close-icon{
@@ -129,7 +129,7 @@ body{
   justify-content:flex-start;
   
 }
-
 .son{
-  
+  margin-left: 20px;
 }
+
